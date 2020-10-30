@@ -1,13 +1,14 @@
 import tkinter as tk
+import random
 
 window = tk.Tk()
 canvas = tk.Canvas(window, width=300, height=300, background="red")
 canvas.pack()
 
-x0 = 45
-y0 = 45
-x1 = 55
-y1 = 55
+x0 = random.randint(10,90)
+y0 = x0
+x1 = x0 + 10
+y1 = y0 + 10
 speed_x = 2
 speed_y = 3
 
