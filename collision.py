@@ -90,9 +90,19 @@ while True:
 
 # Difficulty with circular and triangular hitboxes
 	
-    if len(canvas.find_overlapping(550,550,650,650)) > 2:
+    if len(canvas.find_overlapping(450,450,550,550)) > 4:
         print("collision")
+        print(canvas.find_overlapping(450,450,550,550))
     
+
+# Instead of touching of first touch, would it be radius distance from center of the ball. 
+
+# If ball within bounding box, then perform calculation with the three lines and making sure it is in that space
+
+# Find extreme positions of both shapes and find the distance from every extreme position to another and find minimum.
+
+# List of data required to have to match targets with firers.
+# Must have vs nice to have.
 
 ## from sympy import *
 #from sympy.geometry import *
