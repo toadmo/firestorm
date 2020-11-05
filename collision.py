@@ -3,8 +3,8 @@ import random
 
 
 root = Tk()
-root.geometry('1000x1000')
-canvas = Canvas(root, height=1000, width=1000)
+root.geometry('500x500')
+canvas = Canvas(root, height=500, width=500)
 canvas.pack()
 
 # Need multiple balls moving around, collisions with triangle, rectangle, circle
@@ -20,13 +20,13 @@ def drawRectangle(x1,y1,x2,y2, color, width):
     canvas.create_line(x1,y2,x2,y2, fill=color, width=width)
     canvas.create_line(x2,y1,x2,y2, fill=color, width=width)
 
-ball1 = canvas.create_oval(100,100,122,122,fill="blue", tag='ball')
-ball2 = canvas.create_oval(15,15,47,47,fill="blue", tag='ball')
-ball3 = canvas.create_oval(30,30,62,62,fill="blue", tag='ball')
+ball1 = canvas.create_oval(300,300,332,332,fill="blue", tag='ball')
+ball2 = canvas.create_oval(350,350,382,382,fill="blue", tag='ball')
+ball3 = canvas.create_oval(270,270,302,302,fill="blue", tag='ball')
 
 balls = [ball1, ball2, ball3]
 
-shapes = [drawTriangle(400, 475, 200, 350, 400, 150, 'black', 5), drawRectangle(450, 450, 550, 550, 'green', 5), canvas.create_oval(100,100,200,200,fill='yellow',tag='circle')]
+shapes = [drawTriangle(400, 475, 200, 350, 400, 150, 'black', 5), drawRectangle(10, 10, 100, 400, 'green', 5), canvas.create_oval(120,120,200,200,fill='yellow',tag='circle')]
 
 speed_x1 = random.randint(-10,10)
 speed_y1 = random.randint(-3,3)
@@ -70,14 +70,14 @@ while True:
                 speed_y2 = random.randint(0,3)
             else:
                 speed_y3 = random.randint(0,3)
-        if coords[2] >= 1000:
+        if coords[2] >= 500:
             if y == ball1:
                 speed_x1 = random.randint(-10,0)
             elif y == ball2:
                 speed_x2 = random.randint(-10,0)
             else:
                 speed_x3 = random.randint(-10,0)
-        if coords[3] >= 1000:
+        if coords[3] >= 500:
             if y == ball1:
                 speed_y1 = random.randint(-3,0)
             elif y == ball2:
@@ -90,9 +90,8 @@ while True:
 
 # Difficulty with circular and triangular hitboxes
 	
-    if len(canvas.find_overlapping(450,450,550,550)) > 4:
+    if len(canvas.find_overlapping(10, 10, 100, 400)) > 4:
         print("collision")
-        print(canvas.find_overlapping(450,450,550,550))
     
 
 # Instead of touching of first touch, would it be radius distance from center of the ball. 
@@ -103,6 +102,11 @@ while True:
 
 # List of data required to have to match targets with firers.
 # Must have vs nice to have.
+
+
+
+
+
 
 ## from sympy import *
 #from sympy.geometry import *
