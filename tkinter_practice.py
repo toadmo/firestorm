@@ -1,4 +1,4 @@
-import Tkinter as tk
+import tkinter as tk
 
 window = tk.Tk()
 greeting = tk.Label(text="Tkinter Starting Point")

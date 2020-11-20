@@ -1,7 +1,6 @@
 from tkinter import *
 import random
 
-
 root = Tk()
 root.geometry('500x500')
 canvas = Canvas(root, height=500, width=500)
@@ -105,71 +104,3 @@ while True:
     a = [400, 475]
     b = [200, 350]
     c = [400, 150]
-    tri_area = abs((b[0] - a[0])*(c[1] - a[1] - (c[0] - a[0])*(b[1] - a[1])))
-
-    area1 = abs(a[0] - )
-
-    tri_distances = []
-    for x in tri_coords
-    
-    function checkTrianglePoint({points,px,py}) {
-  const [point1,point2,point3] = points;
-  const [x1,y1] = point1;
-  const [x2,y2] = point2;
-  const [x3,y3] = point3;
-  //Original gross area
-  const areaOrig = Math.abs( (x2-x1)*(y3-y1) - (x3-x1)*(y2-y1) );
-
-  //Area formed by detection point and triangle vertex
-  const area1 = Math.abs( (x1-px)*(y2-py) - (x2-px)*(y1-py) );
-  const area2 = Math.abs( (x2-px)*(y3-py) - (x3-px)*(y2-py) );
-  const area3 = Math.abs( (x3-px)*(y1-py) - (x1-px)*(y3-py) );
-  const areaTotal = area1 + area2 + area3;
-
-  //Allowable value of calculation error
-  const buffer = 0.1;
-  if (areaTotal >= areaOrig-buffer && areaTotal<= areaOrig+buffer) {
-    return true;
-  }
-  return false;
-}
-
-
-# Instead of touching of first touch, would it be radius distance from center of the ball. 
-
-# If ball within bounding box, then perform calculation with the three lines and making sure it is in that space
-
-# Find extreme positions of both shapes and find the distance from every extreme position to another and find minimum.
-
-# List of data required to have to match targets with firers.
-# Must have vs nice to have.
-
-
-
-
-
-
-## from sympy import *
-#from sympy.geometry import *
-#x1, y1, x2, y2, xc, yc = symbols("x1,y1,x2,y2,xc,yc")
-#p1 = Point(x1, y1)
-#p2 = Point(x2, y2)
-#pc = Point(xc, yc)
-
-#line = Line(p1, p2)
-#pline = line.perpendicular_line(pc)
-#p = line.intersection(pline)[0]
-#cse(p, symbols=numbered_symbols("t"))
-## 
-
-#([(t0, x1 - x2), (t1, y1 - y2), (t2, x1*y2 - x2*y1), (t3, t0**2 + t1**2)],
-# [Point((t0**2*xc + t0*t1*yc - t1*t2)/t3, (t0*t1*xc + t0*t2 + t1**2*yc)/t3)])
-
-
-#t0 = x1 - x2
-#t1 = y1 - y2
-#t2 = x1*y2 - x2*y1
-#t3 = t0**2 + t1**2
-
-#xp = (t0**2*xc + t0*t1*yc - t1*t2)/t3
-#yp = (t0*t1*xc + t0*t2 + t1**2*yc)/t3    
