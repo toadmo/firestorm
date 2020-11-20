@@ -152,7 +152,7 @@ def rotate_x(x,y):
     s = math.sin(angle)
     c = math.cos(angle)
     x -= 250
-    y -= 20
+    y -= 35
     xnew = x*c - y*s
     ynew = x*s + y*c
     return xnew+250
@@ -161,10 +161,10 @@ def rotate_y(x,y):
     s = math.sin(angle)
     c = math.cos(angle)
     x -= 250
-    y -= 20
+    y -= 35
     xnew = x*c - y*s
     ynew = x*s + y*c
-    return ynew+20
+    return ynew+35
 
 # Collision Detection
 
@@ -181,7 +181,7 @@ for x in range(0,4):
         vector1 = (artillery_coords[0] - (artillery_coords[2]+artillery_coords[4])/2, artillery_coords[1] - (artillery_coords[3]+artillery_coords[5])/2)
         vector2 = (sort[x].midpoint()[0] - (artillery_coords[2]+artillery_coords[4])/2, sort[x].midpoint()[1] - (artillery_coords[3]+artillery_coords[5])/2)
 
-        angle = math.acos(numpy.dot(vector1, vector2)/(numpy.linalg.norm(vector1)*numpy.linalg.norm(vector2)))
+        angle = math.acos(numpy.dot(vector2, vector1)/(numpy.linalg.norm(vector1)*numpy.linalg.norm(vector2)))
         
         counter = 0
         
@@ -200,3 +200,6 @@ for x in range(0,4):
             canvas.move(shot2, vel_x, vel_y)
             canvas.after(50)
             canvas.update()
+
+
+# Could use image and .rotate() function
