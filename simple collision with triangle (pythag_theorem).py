@@ -1,3 +1,5 @@
+# https://byjus.com/maths/centroid-of-a-triangle/
+
 from tkinter import *
 import random
 import math
